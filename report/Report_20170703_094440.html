@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>API测试报告</title>
+    <title>测试报告</title>
     <meta name="generator" content="HTMLTestRunner 0.8.2"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
@@ -188,10 +188,10 @@ function showOutput(id, name) {
 --></script>
 
 <div class='heading'>
-<h1>API测试报告</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-06-21 10:34:09</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.359801</p>
-<p class='attribute'><strong>Status:</strong> Pass 1 Error 1</p>
+<h1>测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-07-03 09:44:40</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:30.408739</p>
+<p class='attribute'><strong>Status:</strong> Error 1</p>
 
 <p class='description'>测试结果</p>
 </div>
@@ -222,16 +222,16 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='errorClass'>
-    <td>APITestCase.APILimsTest</td>
-    <td>2</td>
+    <td>TestCase.TestSortPages: 化验项目分类管理</td>
     <td>1</td>
     <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
 <tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_GetTestItemList</div></td>
+    <td class='errorCase'><div class='testcase'>test_page_loaded</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -246,13 +246,17 @@ function showOutput(id, name) {
         <pre>
         
 ft1.1: Traceback (most recent call last):
-  File "E:\MES测试\code\APITestCase.py", line 14, in test_GetTestItemList
-    self.assertEqual(result['data'][0]['TestItemName'], u'顶部')
-IndexError: list index out of range
+  File "E:\MES测试\code\TestCase.py", line 93, in test_page_loaded
+    self.assertEqual(page.check_page_loaded(), u'化验填写项目管理')
+  File "E:\MES测试\code\page.py", line 52, in check_page_loaded
+    return frame.find_element(*CategoryPageLocators.TITLE).text
+AttributeError: 'NoneType' object has no attribute 'find_element'
 Traceback (most recent call last):
-  File "E:\MES测试\code\APITestCase.py", line 14, in test_GetTestItemList
-    self.assertEqual(result['data'][0]['TestItemName'], u'顶部')
-IndexError: list index out of range
+  File "E:\MES测试\code\TestCase.py", line 93, in test_page_loaded
+    self.assertEqual(page.check_page_loaded(), u'化验填写项目管理')
+  File "E:\MES测试\code\page.py", line 52, in check_page_loaded
+    return frame.find_element(*CategoryPageLocators.TITLE).text
+AttributeError: 'NoneType' object has no attribute 'find_element'
 
 
         </pre>
@@ -262,15 +266,10 @@ IndexError: list index out of range
     </td>
 </tr>
 
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_InsertTestItemType</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
 <tr id='total_row'>
     <td>Total</td>
-    <td>2</td>
     <td>1</td>
+    <td>0</td>
     <td>0</td>
     <td>1</td>
     <td>&nbsp;</td>

@@ -1,5 +1,4 @@
 #coding=utf-8
-
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from page import *
@@ -10,7 +9,7 @@ BASE_URL='http://localhost:28215/Login.aspx'
 class TestLoginPages(unittest.TestCase):
 	u'''登录页面测试'''
 	def setUp(self):
-		self.driver=webdriver.Ie()
+		self.driver=webdriver.Chrome()
 		self.driver.maximize_window()
 		self.driver.get(BASE_URL)
 	def test_empty_pass(self):
@@ -73,23 +72,29 @@ class TestLoginPages(unittest.TestCase):
 	def tearDown(self):
 		self.driver.quit()
 
-class TestSortPage(unittest.TestCase):
+class TestSortPages(unittest.TestCase):
 	u'''化验项目分类管理'''
 	def setUp(self):
-		self.driver=webdriver.Ie()
+		self.driver=webdriver.Chrome()
 		self.driver.maximize_window()
 		self.driver.get(BASE_URL)
 		self.driver.implicitly_wait(3)
 		page=LoginPage(self.driver)
 		page.login('admin', 'admin')
 		self.driver.implicitly_wait(5)
+		mainpage=MainPage(self.driver)
+		mainpage.enter_into_page()
+		self.driver.implicitly_wait(4)
 		storpage=SortPage(self.driver)
 		storpage.get_into_page()
 		self.driver.implicitly_wait(4)
 	def test_page_loaded(self):		
 		page=SortPage(self.driver)
-		self.assertEqual(page.check_page_loaded(), )
+		self.assertEqual(page.check_page_loaded(), u'化验填写项目管理')
 		self.driver.implicitly_wait(3)
+	# def test_get_img(self):
+	# 	page=SortPage(self.driver)
+	# 	print(page.get_img())
 
 	def tearDown(self):
 		self.driver.quit()

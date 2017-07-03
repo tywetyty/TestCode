@@ -7,7 +7,7 @@ class LoginMessage(object):
 	FAILUSER=u'该用户不存在！'
 
 class LabMessage(object):
-	HEADTITLE='化验项目分类管理'
+	HEADTITLE=u'化验项目分类管理'
 	ADDSUCCESS=''
 	EDITSUCCESS=''
 	STOP=u'该化验项目已停用'

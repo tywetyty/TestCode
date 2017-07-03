@@ -43,11 +43,12 @@ class MainPage(Page):
 
 class SortPage(Page):
 	def get_into_page(self):
+		self.click_double(*MESPageLocators.MEUN)
+		sleep(6)
 		self.find_element(*MESPageLocators.QA).click()
-		sleep(1)
-		self.find_element(*MESPageLocators.SORT).click()
-		sleep(3)
-	def check_page_loaded(self):	
+		sleep(4)
+	def check_page_loaded(self):
+		frame=self.swith_frame('main')
 		return self.find_element(*CategoryPageLocators.TITLE).text
 	def enter_add(self):
 		self.find_element(*CategoryPageLocators.ADDBTN).click()
@@ -71,6 +72,12 @@ class SortPage(Page):
 	def get_tables(self):
 		tables=self.find_elements(*CategoryPageLocators.TABLEVEIW)
 		return tables.find_elements_by_tag_name('table')
+	def get_img(self):
+		tables=self.get_tables()
+		table=tables.pop()
+		img=table.find_elements_by_tag_name('img')
+		return img.get_attribute('class')
+
 
 
 

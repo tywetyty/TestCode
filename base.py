@@ -1,6 +1,8 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException,NoAlertPresentException
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.keys import Keys
 
 class Page(object):
 	def __init__(self,driver):
@@ -39,6 +41,19 @@ class Page(object):
 		alert.accept()
 	def enter_input(self,*locator,detail):
 		self.find_element(*locator).send_keys(detail)
+	def select_by_element_value(self,*locator,value):
+		element=self.find_element(*locator)
+		select=Select(element)
+		select.select_by_value(value)
+	def click_double(self,*locator):
+		element=self.find_element(*locator)
+		ActionChains(self.driver).double_click(element).perform()
+	def swith_frame(self,loc):
+		return self.driver.switch_to_frame(loc)
+	def switch_default_conent(self):
+		return self.driver.switch_to_default_conent()
+
+
 
 
 

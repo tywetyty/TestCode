@@ -14,7 +14,8 @@ class MainPageLocators(object):
 	SETTINGBTN=(By.ID,'regions_Region1_ContentPanel1_pnlMiddleLeft_Toolbar1_btnLangMenu')
 	CANCELBTN=(By.ID,'regions_Region1_ContentPanel1_pnlMiddleLeft_Toolbar1_btnLangMenu_Menu1_btnCancel-itemEl')
 class MESPageLocators(object):
-	QA=(By.ID,'ext-element-11')
+	MEUN=(By.ID,'treeview-1026-record-80')
+	QA=(By.XPATH,'//*[@id="treeview-1026-record-84"]/tbody/tr/td/div/a')
 	SORT=(By.ID,'ext-element-40')
 	INPUTPROJECT=(By.ID,'ext-element-38')
 	LABPROJECT=(By.ID,'ext-element-42')
@@ -24,7 +25,7 @@ class MESPageLocators(object):
 	QUERY=(By.ID,'ext-element-47')
 	DISPLAY=(By.XPATH,'//*[@id="treeview-1026-record-90"]/tbody/tr/td/div/a')
 class CategoryPageLocators(object):
-	TITLE=(By.ID,'Panel3_Panel4_dgvItemType_header-title-textEl')
+	TITLE=(By.XPATH,'//*[@id="Panel3_Panel4_dgvItemType_header-title-textEl"]')
 	ADDBTN=(By.ID,'Panel3_Panel4_Toolbar1_btnAdd')
 	EDITBTN=(By.ID,'Panel3_Panel4_Toolbar1_btnEdit')
 	STOPBTN=(By.ID,'Panel3_Panel4_Toolbar1_btnStop')
@@ -40,9 +41,3 @@ class CategoryPageLocators(object):
 	MESSAGEBTN=(By.ID,'button-1005')
 	TABLEVEIW=(By.ID,'tableview-1022')
 	TABLES=(By.TAG_NAME,'table')
-
-
-
-
-
-

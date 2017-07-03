@@ -1,7 +1,7 @@
-from TestCase import *
-import unittest
+#import unittest
 import HTMLTestRunner
 from APITestCase import *
+from TestCase import *
 import time
 import argparse
 import sys
@@ -22,7 +22,7 @@ def run_api_test():
 
 def run_ui_test():
 	print('--------------Start UI Test-------------------')
-	suite=unittest.TestLoader().loadTestsFromTestCase(TestLoginPages)
+	suite=unittest.TestLoader().loadTestsFromTestCase(TestSortPages)
 	report='./report/Report'+time.strftime('_%Y%m%d_%H%M%S',time.localtime(time.time()))+'.html'
 	fp=open(report,'wb')
 	runner=HTMLTestRunner.HTMLTestRunner(
@@ -33,16 +33,17 @@ def run_ui_test():
 	print('--------------End UI Test-------------------')
 
 if __name__ == '__main__':
-	parser=argparse.ArgumentParser()
-	parser.add_argument('-run',help='Run Test!')
-	arg=parser.parse_args()
-	if arg.run=='api' or arg.run=='API':
-		run_api_test()
-	elif arg.run=='UI' or arg.run=='ui':
-		run_ui_test()
-	else:
-		api=threading.Thread(target=run_api_test)
-		ui=threading.Thread(target=run_ui_test)
-		api.start()
-		ui.start()
+	# parser=argparse.ArgumentParser()
+	# parser.add_argument('-run',help='Run Test!')
+	# arg=parser.parse_args()
+	# if arg.run=='api' or arg.run=='API':
+	# 	run_api_test()
+	# elif arg.run=='UI' or arg.run=='ui':
+	# 	run_ui_test()
+	# else:
+	# 	api=threading.Thread(target=run_api_test)
+	# 	ui=threading.Thread(target=run_ui_test)
+	# 	api.start()
+	# 	ui.start()
+	run_ui_test()
 	

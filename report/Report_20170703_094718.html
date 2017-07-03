@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>测试报告</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-06-19 16:06:35</p>
-<p class='attribute'><strong>Duration:</strong> 0:03:30.115856</p>
-<p class='attribute'><strong>Status:</strong> Pass 4 Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-07-03 09:47:18</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:30.700756</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
 
 <p class='description'>测试结果</p>
 </div>
@@ -221,95 +221,26 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='errorClass'>
-    <td>TestCase.TestLoginPages: 登录页面测试</td>
-    <td>5</td>
-    <td>4</td>
-    <td>0</td>
+<tr class='passClass'>
+    <td>TestCase.TestSortPages: 化验项目分类管理</td>
     <td>1</td>
-    <td><a href="javascript:showClassDetail('c1',5)">Detail</a></td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_empty_pass: 测试不输入任何密码</div></td>
+    <td class='none'><div class='testcase'>test_page_loaded</div></td>
     <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_fail_pass: 测试输入错误的密码</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_empty_username: 测试不输入用户名</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.4' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_fail_username: 测试输入输入用户名不存在</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='ft1.5' class='none'>
-    <td class='errorCase'><div class='testcase'>test_login_success: 登录成功‘</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
-        error</a>
-
-    <div id='div_ft1.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.5: Traceback (most recent call last):
-  File "E:\MES测试\code\TestCase.py", line 69, in test_login_success
-    self.assertEqual(mainpage.get_user(), 'admin')
-  File "E:\MES测试\code\page.py", line 36, in get_user
-    return self.find_element(*MainPageLocators.USER).text
-  File "E:\MES测试\code\base.py", line 10, in find_element
-    return self.driver.find_element(*locator)
-  File "E:\Anaconda3\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 787, in find_element
-    'value': value})['value']
-  File "E:\Anaconda3\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in execute
-    self.error_handler.check_response(response)
-  File "E:\Anaconda3\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: Unable to find element with xpath == //*[@id="regions_Region1_ContentPanel1_pnlMiddleLeft_Toolbar1_lblUserNames-inputEl"]/span
-
-Traceback (most recent call last):
-  File "E:\MES测试\code\TestCase.py", line 69, in test_login_success
-    self.assertEqual(mainpage.get_user(), 'admin')
-  File "E:\MES测试\code\page.py", line 36, in get_user
-    return self.find_element(*MainPageLocators.USER).text
-  File "E:\MES测试\code\base.py", line 10, in find_element
-    return self.driver.find_element(*locator)
-  File "E:\Anaconda3\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 787, in find_element
-    'value': value})['value']
-  File "E:\Anaconda3\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in execute
-    self.error_handler.check_response(response)
-  File "E:\Anaconda3\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: Unable to find element with xpath == //*[@id="regions_Region1_ContentPanel1_pnlMiddleLeft_Toolbar1_lblUserNames-inputEl"]/span
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>5</td>
-    <td>4</td>
-    <td>0</td>
     <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>
